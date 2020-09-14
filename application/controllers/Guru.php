@@ -369,9 +369,9 @@ public function aksi_tambah_prestasi(){
     redirect('guru/rekap_prestasi');
 }
 
-public function soal_ujian_online(){
-    $data['title'] = "Soal Ujian Online";
-    $this->load->view('guru/soal_ujian_online',$data);
+public function elearning(){
+    $data['title'] = "E-Learning English";
+    $this->load->view('guru/elearning',$data);
 }
 
 public function hapus_soal_ujian_online($id_soal){
@@ -433,35 +433,32 @@ public function aksi_edit_prestasi(){
     redirect('guru/rekap_prestasi');
 }
 
-public function tambah_soal_ujian($id_soal){
-    $data['title'] = "Tambah soal ujian";
-    $data['id_soal'] = $id_soal;
+public function tambah_soal_ujian($id_elearning){
+    $data['title'] = "Pembuatan Soal Test";
+    $data['id_elearning'] = $id_elearning;
     $this->load->view('guru/tambah_soal_ujian',$data);
 }
 
-public function daftar_soal_ujian($id_soal){
+public function daftar_soal_ujian($id_elearning){
     $data['title'] = "Daftar soal ujian";
-    $data['id_soal'] = $id_soal;
+    $data['id_elearning'] = $id_elearning;
     $this->load->view('guru/daftar_soal',$data);
 }
 
-public function aksi_tambah_soal(){
-    $id_pelajaran = $this->input->post('id_pelajaran');
-    $id_kurikulum = $this->input->post('id_kurikulum');
-    $catatan = $this->input->post('catatan');
-
-    $kurikulum = $this->Staff_model->ambil_data_id($id_kurikulum,'id_kurikulum','kurikulum');
-
+public function aksi_buat_elearning(){
+    $tingkat = $this->input->post('tingkat');
+    $topik = $this->input->post('topik');
+    $deskripsi = $this->input->post('deskripsi');
 
     $data = array(
-        'id_pelajaran' => $kurikulum->id_pelajaran,
-        'id_kelas' => $kurikulum->id_kelas,
-        'catatan' => $catatan,
+        'tingkat' => $tingkat,
+        'topik' => $topik,
+        'deskripsi' => $deskripsi,
         'status' => 'off',
     );
-    $this->Staff_model->save_tambah($data, 'soal');
+    $this->Staff_model->save_tambah($data, 'elearning');
 
-    redirect('guru/soal_ujian_online');
+    redirect('guru/elearning');
 }
 
 public function aksi_tambah_soal_ujian(){
@@ -472,14 +469,14 @@ public function aksi_tambah_soal_ujian(){
     $d = $this->input->post('d');
     $e = $this->input->post('e');
     $jawaban = $this->input->post('jawaban');
-    $id_soal = $this->input->post('id_soal');
+    $id_elearning = $this->input->post('id_elearning');
     $data = array();
 
     $index = 0;
     foreach($isi as $data_isi){
         array_push($data, array(
             'isi'=>$data_isi,
-            'id_soal'=>$id_soal,
+            'id_elearning'=>$id_elearning,
             'a'=>$a[$index],
             'b'=>$b[$index],
             'c'=>$c[$index],
@@ -492,7 +489,42 @@ public function aksi_tambah_soal_ujian(){
     }
     $this->Staff_model->save_batch($data, 'soal_ujian');
 
-    redirect('guru/soal_ujian_online');
+    redirect('guru/elearning');
+}
+
+public function aksi_update_soal_ujian(){
+    $isi = $this->input->post('isi');
+    $a = $this->input->post('a');
+    $b = $this->input->post('b');
+    $c = $this->input->post('c');
+    $d = $this->input->post('d');
+    $e = $this->input->post('e');
+    $jawaban = $this->input->post('jawaban');
+    $id_elearning = $this->input->post('id_elearning');
+    $data = array();
+
+    
+    $where = array('id_elearning' => $id_elearning);
+    $this->Staff_model->hapus($where, 'soal_ujian');
+
+    $index = 0;
+    foreach($isi as $data_isi){
+        array_push($data, array(
+            'isi'=>$data_isi,
+            'id_elearning'=>$id_elearning,
+            'a'=>$a[$index],
+            'b'=>$b[$index],
+            'c'=>$c[$index],
+            'd'=>$d[$index],
+            'e'=>$e[$index],
+            'jawaban'=>$jawaban[$index],
+        ));
+
+        $index++;
+    }
+    $this->Staff_model->save_batch($data, 'soal_ujian');
+
+    redirect('guru/elearning');
 }
 
 public function soal_on($id_soal){
@@ -568,16 +600,16 @@ public function aksi_sms_ortu(){
 }
 
 
-public function soal_ujian_online_nilai($id_soal,$id_kelas){
-    $data['title'] = "Nilai Ujian Online";
-    $data['lists'] = $this->Staff_model->ambil_data_id_array($id_soal,'id_soal','nilai_ujian');
-    $data['id_kelas'] = $id_kelas;
-    $data['id_soal'] = $id_soal;
+public function soal_ujian_online_nilai($id_elearning,$tingkat,$topik){
+    $data['title'] = "Nilai Tes Untuk Materi : ".$topik;
+    $data['lists'] = $this->Staff_model->ambil_data_id_array($id_elearning,'id_elearning','nilai_ujian');
+    $data['tingkat'] = $tingkat;
+    $data['id_elearning'] = $id_elearning;
     $this->load->view('guru/soal_ujian_online_nilai',$data);
 }
 
-public function tambah_soal_ujian_online(){
-    $data['title'] = "Tambah Soal Ujian Online";
-    $this->load->view('guru/tambah_soal_ujian_online',$data);
+public function buat_elearning(){
+    $data['title'] = "Buat E-Learning";
+    $this->load->view('guru/buat_elearning',$data);
 }
 }

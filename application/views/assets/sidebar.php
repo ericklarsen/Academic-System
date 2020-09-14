@@ -1,9 +1,9 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
-<?php 
+<?php
 if ($_SESSION['jabatan'] == "tu") {
-  ?>
+?>
   <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
@@ -47,65 +47,65 @@ if ($_SESSION['jabatan'] == "tu") {
           </ul>
         </li>
 
-        <li class="dropdown <?php echo $this->uri->segment(2) == 'kurikulum_pelajaran' 
-        || $this->uri->segment(2) == 'kurikulum_kelas' || $this->uri->segment(2) == 'kurikulum_edit' || $this->uri->segment(2) == 'tambah_kurikulum' || $this->uri->segment(2) == 'tambah_pelajaran' || $this->uri->segment(2) == 'pelajaran_edit' ? 'active' : ''; ?>">
-        <a class="nav-link has-dropdown" data-toggle="dropdown">
-          <i class="far fa-square"></i> 
-          <span>Kurikulum</span>
-        </a>
-        <ul class="dropdown-menu">
-          <li class="<?php echo $this->uri->segment(2) == 'kurikulum_pelajaran'|| $this->uri->segment(2) == 'tambah_pelajaran' || $this->uri->segment(2) == 'pelajaran_edit'  ? 'active' : ''; ?>">
-            <a class="nav-link" href="<?php echo base_url(); ?>staff/kurikulum_pelajaran">
-              Daftar Pelajaran
-            </a>
-          </li>
-          <li class="<?php echo $this->uri->segment(2) == 'jadwal_pelajaran'|| $this->uri->segment(2) == 'tambah_jadwal_pelajaran' || $this->uri->segment(2) == 'edit_jadwal_pelajaran'  ? 'active' : ''; ?>">
-            <a class="nav-link" href="<?php echo base_url(); ?>staff/jadwal_pelajaran">
-              Jadwal Pelajaran
-            </a>
-          </li>
-          <li class="<?php echo $this->uri->segment(2) == 'kurikulum_kelas' || $this->uri->segment(2) == 'kurikulum_edit' || $this->uri->segment(2) == 'tambah_kurikulum' ? 'active' : ''; ?>">
-            <a class="nav-link" href="<?php echo base_url(); ?>staff/kurikulum_kelas">
-              Daftar Kurikulum
-            </a>
-          </li>
-        </ul>
-      </li>
+        <li class="dropdown <?php echo $this->uri->segment(2) == 'kurikulum_pelajaran'
+                              || $this->uri->segment(2) == 'kurikulum_kelas' || $this->uri->segment(2) == 'kurikulum_edit' || $this->uri->segment(2) == 'tambah_kurikulum' || $this->uri->segment(2) == 'tambah_pelajaran' || $this->uri->segment(2) == 'pelajaran_edit' ? 'active' : ''; ?>">
+          <a class="nav-link has-dropdown" data-toggle="dropdown">
+            <i class="far fa-square"></i>
+            <span>Kurikulum</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="<?php echo $this->uri->segment(2) == 'kurikulum_pelajaran' || $this->uri->segment(2) == 'tambah_pelajaran' || $this->uri->segment(2) == 'pelajaran_edit'  ? 'active' : ''; ?>">
+              <a class="nav-link" href="<?php echo base_url(); ?>staff/kurikulum_pelajaran">
+                Daftar Pelajaran
+              </a>
+            </li>
+            <li class="<?php echo $this->uri->segment(2) == 'jadwal_pelajaran' || $this->uri->segment(2) == 'tambah_jadwal_pelajaran' || $this->uri->segment(2) == 'edit_jadwal_pelajaran'  ? 'active' : ''; ?>">
+              <a class="nav-link" href="<?php echo base_url(); ?>staff/jadwal_pelajaran">
+                Jadwal Pelajaran
+              </a>
+            </li>
+            <li class="<?php echo $this->uri->segment(2) == 'kurikulum_kelas' || $this->uri->segment(2) == 'kurikulum_edit' || $this->uri->segment(2) == 'tambah_kurikulum' ? 'active' : ''; ?>">
+              <a class="nav-link" href="<?php echo base_url(); ?>staff/kurikulum_kelas">
+                Daftar Kurikulum
+              </a>
+            </li>
+          </ul>
+        </li>
 
-      <li class="dropdown <?php echo $this->uri->segment(2) == 'staff' || $this->uri->segment(2) == 'tambah_staff' || $this->uri->segment(2) == 'staff_edit'? 'active' : ''; ?>">
-        <a href="#" class="nav-link has-dropdown">
-          <i class="fas fa-th"></i> 
-          <span>Kepegawaian</span>
-        </a>
-        <ul class="dropdown-menu">
-          <li class="<?php echo $this->uri->segment(2) == 'staff' || $this->uri->segment(2) == 'tambah_staff' || $this->uri->segment(2) == 'staff_edit' ? 'active' : ''; ?>">
-            <a class="nav-link" href="<?php echo base_url(); ?>staff/staff">
-              Daftar staff
-            </a>
-          </li>
-        </ul>
-      </li>
+        <li class="dropdown <?php echo $this->uri->segment(2) == 'staff' || $this->uri->segment(2) == 'tambah_staff' || $this->uri->segment(2) == 'staff_edit' ? 'active' : ''; ?>">
+          <a href="#" class="nav-link has-dropdown">
+            <i class="fas fa-th"></i>
+            <span>Kepegawaian</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="<?php echo $this->uri->segment(2) == 'staff' || $this->uri->segment(2) == 'tambah_staff' || $this->uri->segment(2) == 'staff_edit' ? 'active' : ''; ?>">
+              <a class="nav-link" href="<?php echo base_url(); ?>staff/staff">
+                Daftar staff
+              </a>
+            </li>
+          </ul>
+        </li>
 
 
-      <li class="menu-header">Lain-lain</li>
-      <li class="<?php echo $this->uri->segment(2) == 'pengumuman' ? 'active' : ''; ?>">
-        <a class="nav-link" href="<?php echo base_url(); ?>staff/pengumuman">
-          <i class="fas fa-pencil-ruler"></i> <span>Pengumuman</span>
-        </a>
-      </li>
-      <li class="<?php echo $this->uri->segment(2) == 'registrasi' ? 'active' : ''; ?>">
-        <a class="nav-link" href="<?php echo base_url(); ?>staff/registrasi">
-          <i class="fas fa-book"></i> <span>Registrasi</span>
-        </a>
-      </li>
+        <li class="menu-header">Lain-lain</li>
+        <li class="<?php echo $this->uri->segment(2) == 'pengumuman' ? 'active' : ''; ?>">
+          <a class="nav-link" href="<?php echo base_url(); ?>staff/pengumuman">
+            <i class="fas fa-pencil-ruler"></i> <span>Pengumuman</span>
+          </a>
+        </li>
+        <li class="<?php echo $this->uri->segment(2) == 'registrasi' ? 'active' : ''; ?>">
+          <a class="nav-link" href="<?php echo base_url(); ?>staff/registrasi">
+            <i class="fas fa-book"></i> <span>Registrasi</span>
+          </a>
+        </li>
 
-       
- 
+
+
     </aside>
   </div>
-  <?php
-}elseif ($_SESSION['jabatan'] == "guru") {
-  ?>
+<?php
+} elseif ($_SESSION['jabatan'] == "guru") {
+?>
   <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
@@ -128,10 +128,19 @@ if ($_SESSION['jabatan'] == "tu") {
         </li>
 
         <li class="menu-header">
+          E-Learning
+        </li>
+        <li class="dropdown <?php echo  $this->uri->segment(2) == 'elearning' || $this->uri->segment(2) == 'daftar_soal_ujian' || $this->uri->segment(2) == 'tambah_soal_ujian' || $this->uri->segment(2) == 'buat_elearning' || $this->uri->segment(2) == 'soal_ujian_online_nilai' ? 'active' : ''; ?>">
+          <a href="<?php echo base_url(); ?>guru/elearning" class="nav-link">
+            <i class="fas fa-book"></i><span>E-Learning</span>
+          </a>
+        </li>
+
+        <li class="menu-header">
           Data
         </li>
 
-        <li class="dropdown <?php echo $this->uri->segment(2) == 'absensi' || $this->uri->segment(2) == 'murid' || $this->uri->segment(2) == 'kelas' || $this->uri->segment(2) == 'absensi_list'|| $this->uri->segment(2) == 'absensi_list_detail' || $this->uri->segment(2) == 'isi_absensi' || $this->uri->segment(2) == 'isi_nilai_murid'|| $this->uri->segment(2) == 'absensi_list_detail_edit' || $this->uri->segment(2) == 'soal_ujian_online' || $this->uri->segment(2) == 'tambah_soal_ujian_online' || $this->uri->segment(2) == 'soal_ujian_online_nilai' || $this->uri->segment(2) == 'absensi_list' ? 'active' : ''; ?>">
+        <li class="dropdown <?php echo $this->uri->segment(2) == 'absensi' || $this->uri->segment(2) == 'murid' || $this->uri->segment(2) == 'kelas' || $this->uri->segment(2) == 'absensi_list' || $this->uri->segment(2) == 'absensi_list_detail' || $this->uri->segment(2) == 'isi_absensi' || $this->uri->segment(2) == 'isi_nilai_murid' || $this->uri->segment(2) == 'absensi_list_detail_edit' || $this->uri->segment(2) == 'absensi_list' ? 'active' : ''; ?>">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
             <i class="fas fa-columns"></i> <span>Kesiswaan</span>
           </a>
@@ -141,81 +150,81 @@ if ($_SESSION['jabatan'] == "tu") {
                 Daftar kelas diampuh
               </a>
             </li>
-            <!-- <li class="<?php echo $this->uri->segment(2) == 'absensi' || $this->uri->segment(2) == 'absensi_list_detail_edit'|| $this->uri->segment(2) == 'absensi_list_detail'|| $this->uri->segment(2) == 'isi_absensi'|| $this->uri->segment(2) == 'absensi_list' ? 'active' : ''; ?>">
+            <!-- <li class="<?php echo $this->uri->segment(2) == 'absensi' || $this->uri->segment(2) == 'absensi_list_detail_edit' || $this->uri->segment(2) == 'absensi_list_detail' || $this->uri->segment(2) == 'isi_absensi' || $this->uri->segment(2) == 'absensi_list' ? 'active' : ''; ?>">
               <a class="nav-link" href="<?php echo base_url(); ?>guru/absensi">
                 Absensi
               </a>
             </li> -->
-
+<!-- 
             <li class="<?php echo $this->uri->segment(2) == 'soal_ujian_online' || $this->uri->segment(2) == 'tambah_soal_ujian_online' || $this->uri->segment(2) == 'soal_ujian_online_nilai' ? 'active' : ''; ?>">
               <a class="nav-link" href="<?php echo base_url(); ?>guru/soal_ujian_online">
                 Soal Ujian Online
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
 
-        <?php 
-        $wali = $this->Staff_model->ambil_data_id($_SESSION['nip'],'nip','kelas'); 
+        <?php
+        $wali = $this->Staff_model->ambil_data_id($_SESSION['nip'], 'nip', 'kelas');
         if ($wali != null) {
-          ?>
-          <li class="dropdown <?php echo $this->uri->segment(2) == 'rekap_absensi' ||$this->uri->segment(2) == 'rekap_absensi_detail2' || $this->uri->segment(2) == 'rekap_absensi_detail' || $this->uri->segment(2) == 'rekap_sanksi' || $this->uri->segment(2) == 'rekap_nilai' || $this->uri->segment(2) == 'rekap_nilai_detail' || $this->uri->segment(2) == 'rekap_nilai_detail_2' || $this->uri->segment(2) == 'isi_nilai_sikap'|| $this->uri->segment(2) == 'nilai_sikap' || $this->uri->segment(2) == 'tambah_sanksi' || $this->uri->segment(2) == 'regis_semester' ? 'active' : ''; ?>">
+        ?>
+          <li class="dropdown <?php echo $this->uri->segment(2) == 'rekap_absensi' || $this->uri->segment(2) == 'rekap_absensi_detail2' || $this->uri->segment(2) == 'rekap_absensi_detail' || $this->uri->segment(2) == 'rekap_sanksi' || $this->uri->segment(2) == 'rekap_nilai' || $this->uri->segment(2) == 'rekap_nilai_detail' || $this->uri->segment(2) == 'rekap_nilai_detail_2' || $this->uri->segment(2) == 'isi_nilai_sikap' || $this->uri->segment(2) == 'nilai_sikap' || $this->uri->segment(2) == 'tambah_sanksi' || $this->uri->segment(2) == 'regis_semester' ? 'active' : ''; ?>">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
               <i class="fas fa-columns"></i> <span>Wali Kelas</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="<?php echo $this->uri->segment(2) == 'rekap_absensi' ||$this->uri->segment(2) == 'rekap_absensi_detail2' || $this->uri->segment(2) == 'rekap_absensi_detail'  ? 'active' : ''; ?>">
+              <li class="<?php echo $this->uri->segment(2) == 'rekap_absensi' || $this->uri->segment(2) == 'rekap_absensi_detail2' || $this->uri->segment(2) == 'rekap_absensi_detail'  ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?php echo base_url(); ?>guru/rekap_absensi">
-                 Rekap Absensi
-               </a>
-             </li>
-             <li class="<?php echo $this->uri->segment(2) == 'rekap_sanksi' || $this->uri->segment(2) == 'tambah_sanksi' ? 'active' : ''; ?>">
-              <a class="nav-link" href="<?php echo base_url(); ?>guru/rekap_sanksi">
-                Rekap Sanksi
-              </a>
-            </li>
-            <li class="<?php echo $this->uri->segment(2) == 'rekap_nilai' || $this->uri->segment(2) == 'rekap_nilai_detail' || $this->uri->segment(2) == 'rekap_nilai_detail_2'  ? 'active' : ''; ?>">
-              <a class="nav-link" href="<?php echo base_url(); ?>guru/rekap_nilai">
-                Rekap Nilai 
-              </a>
-            </li>
-            <li class="<?php echo $this->uri->segment(2) == 'rekap_prestasi' || $this->uri->segment(2) == '' || $this->uri->segment(2) == ''  ? 'active' : ''; ?>">
-              <a class="nav-link" href="<?php echo base_url(); ?>guru/rekap_prestasi">
-                Rekap Prestasi 
-              </a>
-            </li>
+                  Rekap Absensi
+                </a>
+              </li>
+              <li class="<?php echo $this->uri->segment(2) == 'rekap_sanksi' || $this->uri->segment(2) == 'tambah_sanksi' ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?php echo base_url(); ?>guru/rekap_sanksi">
+                  Rekap Sanksi
+                </a>
+              </li>
+              <li class="<?php echo $this->uri->segment(2) == 'rekap_nilai' || $this->uri->segment(2) == 'rekap_nilai_detail' || $this->uri->segment(2) == 'rekap_nilai_detail_2'  ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?php echo base_url(); ?>guru/rekap_nilai">
+                  Rekap Nilai
+                </a>
+              </li>
+              <li class="<?php echo $this->uri->segment(2) == 'rekap_prestasi' || $this->uri->segment(2) == '' || $this->uri->segment(2) == ''  ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?php echo base_url(); ?>guru/rekap_prestasi">
+                  Rekap Prestasi
+                </a>
+              </li>
 
-            <?php 
-            $regis = $this->Staff_model->ambil_data_id('on','status','registrasi_semester');
-            if ($regis) {
-            ?>
+              <?php
+              $regis = $this->Staff_model->ambil_data_id('on', 'status', 'registrasi_semester');
+              if ($regis) {
+              ?>
 
-            <li class="<?php echo $this->uri->segment(2) == 'regis_semester' ? 'active' : ''; ?>">
-              <a class="nav-link" href="<?php echo base_url(); ?>guru/regis_semester">
-                Registrasi Semester
-              </a>
-            </li>
-            
-            <?php
-            }
-             ?>
+                <li class="<?php echo $this->uri->segment(2) == 'regis_semester' ? 'active' : ''; ?>">
+                  <a class="nav-link" href="<?php echo base_url(); ?>guru/regis_semester">
+                    Registrasi Semester
+                  </a>
+                </li>
 
-
-         </ul>
-       </li>
-       <?php
-     }
-     ?>
+              <?php
+              }
+              ?>
 
 
+            </ul>
+          </li>
+        <?php
+        }
+        ?>
 
 
-     
-  </aside>
-</div>
+
+
+
+    </aside>
+  </div>
 <?php
-}elseif($_SESSION['jabatan'] == "siswa"){
-  ?>
+} elseif ($_SESSION['jabatan'] == "siswa") {
+?>
   <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
@@ -262,14 +271,14 @@ if ($_SESSION['jabatan'] == "tu") {
           </a>
         </li>
 
-         
- 
-      </aside>
-    </div>
-    <?php
-  }elseif ($_SESSION['jabatan'] == "bk") {
-    ?>
-    <div class="main-sidebar sidebar-style-2">
+
+
+    </aside>
+  </div>
+<?php
+} elseif ($_SESSION['jabatan'] == "bk") {
+?>
+  <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
         <a href="<?php echo base_url(); ?>dist/index">
@@ -300,14 +309,14 @@ if ($_SESSION['jabatan'] == "tu") {
           </a>
         </li>
 
-         
- 
-      </aside>
-    </div>
-    <?php
-  }elseif ($_SESSION['jabatan'] == "ortu") {
-    ?>
-    <div class="main-sidebar sidebar-style-2">
+
+
+    </aside>
+  </div>
+<?php
+} elseif ($_SESSION['jabatan'] == "ortu") {
+?>
+  <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
         <a href="<?php echo base_url(); ?>dist/index">
@@ -364,14 +373,14 @@ if ($_SESSION['jabatan'] == "tu") {
           </a>
         </li>
 
-         
- 
-      </aside>
-    </div>
-    <?php
-  }elseif ($_SESSION['jabatan'] == 'kepsek') {
-    ?>
-    <div class="main-sidebar sidebar-style-2">
+
+
+    </aside>
+  </div>
+<?php
+} elseif ($_SESSION['jabatan'] == 'kepsek') {
+?>
+  <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
         <a href="<?php echo base_url(); ?>dist/index">
@@ -428,11 +437,10 @@ if ($_SESSION['jabatan'] == "tu") {
           </a>
         </li>
 
-         
- 
-      </aside>
-    </div>
-    <?php
-  }
-  ?>
 
+
+    </aside>
+  </div>
+<?php
+}
+?>
